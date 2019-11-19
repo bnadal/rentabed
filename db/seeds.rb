@@ -27,5 +27,5 @@ ad1 = Ad.create!({ description: "big bed", user: user_host1})
 
 ad2 = Ad.create!({ description: "chi chi bed", user: user_host1})
 
-ad2 = Ad.create!({ description: "small bed", user: user_host2})
+ad3 = Ad.create!({ description: "small bed", user: user_host2})
 
