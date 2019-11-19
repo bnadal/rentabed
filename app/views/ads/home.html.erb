@@ -1,13 +1,18 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <br>
+<h2>Sign in</h2>
+<p><%= link_to "Sign in", new_user_session_path%>
+<br>
 <p>********************</p>
 <br>
 
 <h2>Looking for a bed</h2>
+
 <p><p><%= link_to "Find a bed", ads_path%></p></p>
 
 <p><%= link_to "View my bookings", bookings_path%></p>
+
 <br>
 <p>********************</p>
 <br>

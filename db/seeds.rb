@@ -12,17 +12,17 @@ User.destroy_all
 Booking.destroy_all
 
 
-user_host1 = User.create!({ email: "benrarfa@gmail.com", password: "123456" })
+user_host1 = User.create!({ email: "user_host1@gmail.com", password: "123456" })
 
-user_host2 = User.create!({ email: "benzema@gmail.com", password: "123456" })
+user_host2 = User.create!({ email: "user_host2@gmail.com", password: "123456" })
 
-user_host3 = User.create!({ email: "chichi@gmail.com", password: "123456" })
+user_host3 = User.create!({ email: "user_host3@gmail.com", password: "123456" })
 
-user1 = User.create!({ email: "john@gmail.com", password: "123456" })
+user1 = User.create!({ email: "user1@gmail.com", password: "123456" })
 
-user2 = User.create!({ email: "cool@gmail.com", password: "123456" })
+user2 = User.create!({ email: "user2@gmail.com", password: "123456" })
 
-user3 = User.create!({ email: "dommage@gmail.com", password: "123456" })
+user3 = User.create!({ email: "user3@gmail.com", password: "123456" })
 
 ad1 = Ad.create!({ description: "big bed", user: user_host1})
 
