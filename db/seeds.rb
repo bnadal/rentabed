@@ -30,12 +30,11 @@ ad2 = Ad.create!({ description: "chi chi bed", user: user_host1})
 
 ad3 = Ad.create!({ description: "small bed", user: user_host2})
 
-
 booking1 = Booking.create!({ user: user2, ad: ad1})
 
 booking2 = Booking.create!({ user: user3, ad: ad3})
 
-booking1 = Booking.create!({ user: user1, ad: ad2})
+
 
 
 
