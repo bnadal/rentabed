@@ -1,0 +1,6 @@
+<h1> my bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <h2><%= booking.user.email %></h2>
+  <p><%= booking.ad.user.email %></p>
+<% end %>
