@@ -32,7 +32,9 @@ ad3 = Ad.create!({ description: "small bed", user: user_host2})
 
 booking1 = Booking.create!({ user: user2, ad: ad1})
 
-booking2 = Booking.create!({ user: user3, ad: ad3})
+booking2 = Booking.create!({ user: user_host1, ad: ad3})
+
+booking3 = Booking.create!({user: user1, ad: ad2, status: "pending"})
 
 
 

@@ -1,0 +1,12 @@
+<h1>show booking</h1>
+
+<% @pending_bookings.each do |booking| %>
+<h2>description: <%= booking.ad.description %></h2>
+  <p>renter: <%= booking.user.email %></p>
+  <p>status: <%= booking.status %></p>
+  <p><%= link_to "confirm my booking", confirm_path(booking)%></p>
+  <p><%= link_to "decline my booking", booking_path(booking)%></p>
+<% end %>
+
+
+
