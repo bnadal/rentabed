@@ -1,1 +1,13 @@
+<br>
 <h1>Add a new ad</h1>
+<br>
+
+<%= simple_form_for @ad do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :city %>
+  <%= f.input :location %>
+  <%= f.input :price_per_hour %>
+  <%= f.input :price_per_night %>
+  <%= f.button :submit %>
+<% end %>
