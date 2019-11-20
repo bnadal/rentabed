@@ -1,8 +1,6 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 <br>
-<h2>Sign in</h2>
-<p><%= link_to "Sign in", new_user_session_path%>
 <br>
 <p>********************</p>
 <br>
@@ -20,5 +18,12 @@
 <p><%= link_to "Put an ad", new_ad_path%></p>
 
 
-<p><%= link_to "View my ads", user_path(current_user)%></p>
+<% if current_user == nil %>
+  <%= link_to "View my ads", new_user_session_path  %>
+<% else %> 
+  <%= link_to "View my ads", user_path(current_user)%>
+<% end %>
+<br>
 <p>Confirm bookings</p>
+
+
