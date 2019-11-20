@@ -9,11 +9,7 @@
 
 <p><p><%= link_to "Find a bed", ads_path%></p></p>
 
-<% if current_user == nil %>
-  <%= link_to "View my bookings", new_user_session_path  %>
-<% else %>
-  <%= link_to "View my bookings", bookings_path%>
-<% end %>
+
 
 <br>
 <p>********************</p>
@@ -27,14 +23,13 @@
 
 <br>
 
-<% if current_user == nil %>
-  <%= link_to "View my ads", new_user_session_path  %>
-<% else %>
-  <%= link_to "View my ads", user_path(current_user)%>
-<% end %>
+
 <br>
 <br>
 <p>Confirm bookings</p>
+
+
+
 
 
 
