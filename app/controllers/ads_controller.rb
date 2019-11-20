@@ -1,14 +1,16 @@
 class AdsController < ApplicationController
 
+
   def home
   end
 
   def index
        # GET /ads/:id
+       @ads = Ad.all
   end
 
   def show
-           
+
   end
 
   def new  # GET /ads/new
