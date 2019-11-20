@@ -1,1 +1,8 @@
 <h1>index</h1>
+<% @ads.each do |ad| %>
+<ul>
+  <li><%= link_to "#{ad.description}", new_ad_booking_path(ad) %></li>
+</ul>
+<% end %>
+
+

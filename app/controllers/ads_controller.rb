@@ -1,14 +1,18 @@
 class AdsController < ApplicationController
 
+
   def home
   end
 
   def index
        # GET /ads/:id
+       @ads = Ad.all
   end
 
+
+
   def show
-    @ads = Ad.where(user: current_user) #display the ads of the current user       
+     @ads = Ad.where(user: current_user) #display the ads of the current user 
   end
 
   def new  # GET /ads/new

@@ -1,0 +1,10 @@
+<h2>Create a new booking</h2>
+
+
+<%= simple_form_for [@ad, @booking] do |f| %>
+  <%= f.input :booking_start, as: :datetime, html5: true %>
+  <%= f.input :booking_end, as: :datetime, html5: true %>
+  <%= f.submit "create" %>
+<% end %>
+
+
