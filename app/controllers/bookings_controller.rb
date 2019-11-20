@@ -14,6 +14,14 @@ class BookingsController < ApplicationController
      redirect_to booking_path(@booking)
    end
 
+
+   def decline
+    @booking = Booking.find(params[:id])
+     @booking.status = "decline"
+     @booking.save
+     redirect_to booking_path(@booking)
+   end
+
   def show
     incoming_bookings
     @bookings = Booking.where(user: current_user)
@@ -30,10 +38,11 @@ def incoming_bookings
     #pour chaque booking de add, on le met dans le arrey incoming_bookings
     ad.bookings.each { |booking| @incoming_bookings << booking }
   end
+  @incoming_bookings
   #on prend tout les bookings avec le statue pending du arrey incoming_bookings
-  @pending_bookings = @incoming_bookings.select do |booking|
-    booking.status == "pending"
-  end
+  #@pending_bookings = @incoming_bookings.select do |booking|
+  #  booking.status == "pending"
+  #end
 end
 
   def destroy
