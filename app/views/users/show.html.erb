@@ -1,12 +1,14 @@
 <h1>My ads</h1>
 <br>
+<ul>
 <% @ads.each do |ad|%>
-<p><%= ad.description  %> ==> renter:
+<li>
+  <p><%= ad.description  %> ==> renter:
   <%= if ad.bookings.last == nil
-         "Not rented"
+         "This bed is not rented"
       else  ad.bookings.last.user.email
-      end %> -- Link to the ad </p>
+      end %> -- <%= link_to "See my ad", ad_path(ad.id)%>
+    </p>
 <% end %>
-
-
-
+</li>
+</ul>
