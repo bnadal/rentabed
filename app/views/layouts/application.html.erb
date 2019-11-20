@@ -27,7 +27,14 @@
                   <%= link_to "View my ads", user_path(current_user), class: "nav-link"%>
                 <% end %>
               </li>
-              <li class="nav-item"><%= link_to "view my bookings", bookings_path, class: "nav-link"   %></li>
+              <li class="nav-item">
+                <% if current_user == nil %>
+                  <%= link_to "View my bookings", new_user_session_path, class: "nav-link"  %>
+                <% else %>
+                  <%= link_to "View my bookings", bookings_path, class: "nav-link"%>
+                <% end %>
+              </li>
+
             </ul>
           </div>
       </div>
