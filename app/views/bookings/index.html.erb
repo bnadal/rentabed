@@ -1,9 +1,19 @@
 <h1> my bookings</h1>
+<h2>THE BEDS FOR YOUR NAP</h2>
 
-<% @bookings.each do |booking| %>
-<h2>description: <%= booking.ad.description %></h2>
+
+<% @outgoing_bookings.each do |booking| %>
+<p>description: <%= booking.ad.description %></p>
   <p>host: <%= booking.ad.user.email %></p>
   <p><%= link_to "Cancel my booking", booking_path(booking), method: :delete%></p>
 <% end %>
 
+<h2>MY BEDS</h2>
 
+
+<% @incoming_bookings.each do |booking| %>
+<p>description: <%= booking.ad.description %></p>
+  <p>renter: <%= booking.user.email %></p>
+  <p>status: <%= booking.status %></p>
+  <p><%= link_to "confirm my booking", booking_path(booking)%></p>
+<% end %>
