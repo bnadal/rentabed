@@ -1,33 +1,22 @@
-<h1>Find the perfect bed for a nap or for the night !</h1>
-<br>
-<br>
-<p>********************</p>
-<br>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media-cdn.tripadvisor.com/media/photo-s/0c/59/67/d8/our-bed-as-a-request.jpg);">
+  <div class="container">
+    <h1>Find the perfect bed for a nap or for the night !</h1>
+    <a class="btn btn-flat" href="#"><p><%= link_to "Find a bed", ads_path%></p></a>
 
-<div class="container">
-
-  <div class="card">
-    <h2>Looking for a bed</h2>
-      <p><%= link_to "Find a bed", ads_path%></p>
+    <a class="btn btn-flat" href="#">
+      <p>
+        <% if current_user == nil %>
+          <%= link_to "put an ad", new_user_session_path%>
+        <% else %>
+          <%= link_to "Put an ad", new_ad_path%>
+          <% end %>
+      </p>   
   </div>
-<br>
-<br>
-  <div class="card">
-    <h2>My ads</h2>
-      <% if current_user == nil %>
-        <%= link_to "Put an ad", new_user_session_path  %>
-      <% else %>
-        <%= link_to "Put an ad", new_ad_path%>
-      <% end %>
-  </div>
-
-  <div class="card">
-    <br>
-    <br>
-    <p>Confirm bookings</p>
-  </div>
-
 </div>
+
+
+
+
 
 
 
