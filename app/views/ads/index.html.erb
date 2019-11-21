@@ -1,10 +1,13 @@
 
-<h1>index</h1>
+<h1>Beds available</h1>
 
 
 <% @ads.each do |ad| %>
 <ul>
   <li>
+    <div class="card-product">
+       <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/75/dd/9d/romantic-bed.jpg">
+      <div class="card-product-infos">
 
     <% if ad.status == nil %>
       <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
@@ -13,10 +16,12 @@
     <% else %>
       <%= ad.title %> --- status : Bed currently unavailable
     <% end %>
+      <p><%= ad.description %></p>
+      <p>Price per hour: <%= ad.price_per_hour %></p>
+        <p>Price per night: <%= ad.price_per_night %></p>
+    </div>
+  </div>
 
   </li>
 </ul>
 <% end %>
-
-
-
