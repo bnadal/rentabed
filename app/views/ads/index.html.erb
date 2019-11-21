@@ -6,22 +6,26 @@
 <ul>
   <li>
     <div class="card-product">
-       <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/75/dd/9d/romantic-bed.jpg">
+       <img src=<%= ad.image %>>
       <div class="card-product-infos">
 
     <% if ad.status == nil %>
-      <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
+      <h3><%= link_to "#{ad.title}", ad_path(ad.id) %></h3>
+      <p>status : Available</p>
     <% elsif ad.status == "" %>
-      <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
-    <% else %>
-      <%= ad.title %> --- status : Bed currently unavailable
+      <h3><%= link_to "#{ad.title}", ad_path(ad.id) %></h3>
+      <p>status : Available</p>
+    <% else %> 
+       <h3><%= ad.title %></h3>
+       <p>status : Bed currently unavailable</p>
     <% end %>
-      <p><%= ad.description %></p>
-      <p>Price per hour: <%= ad.price_per_hour %></p>
-        <p>Price per night: <%= ad.price_per_night %></p>
+    <p><%= ad.description %></p>
+    <p>Price per hour: <%= ad.price_per_hour %></p>
+    <p>Price per night: <%= ad.price_per_night %></p>
     </div>
   </div>
 
   </li>
 </ul>
 <% end %>
+
