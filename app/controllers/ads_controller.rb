@@ -20,11 +20,19 @@ class AdsController < ApplicationController
   end
 
   def create # POST /ads
-    @ad = Ad.new(title: params[:ad][:title], description: params[:ad][:description], location: params[:ad][:location], city: params[:ad][:city], price_per_hour: params[:ad][:price_per_hour], price_per_night: params[:ad][:price_per_night])
-  @ad.save
+    @ad = Ad.new(ad_params)
+    @ad.user = current_user
+    @ad.save!
+    redirect_to :new => 'root'
   end
 
   def delete
+  end
+
+  private
+
+  def ad_params
+    params.require(:ad).permit(:title, :description, :location, :city, :price_per_hour, :price_per_night, :user_id)
   end
 
 end
