@@ -4,28 +4,30 @@
 <p>********************</p>
 <br>
 
-<h2>Looking for a bed</h2>
+<div class="container">
 
-<p><p><%= link_to "Find a bed", ads_path%></p></p>
-
-
-
-<br>
-<p>********************</p>
-<br>
-<h2>My ads</h2>
-<% if current_user == nil %>
-  <%= link_to "Put an ad", new_user_session_path  %>
-<% else %>
-  <%= link_to "Put an ad", new_ad_path%>
-<% end %>
-
-<br>
-
-
+  <div class="card">
+    <h2>Looking for a bed</h2>
+      <p><%= link_to "Find a bed", ads_path%></p>
+  </div>
 <br>
 <br>
-<p>Confirm bookings</p>
+  <div class="card">
+    <h2>My ads</h2>
+      <% if current_user == nil %>
+        <%= link_to "Put an ad", new_user_session_path  %>
+      <% else %>
+        <%= link_to "Put an ad", new_ad_path%>
+      <% end %>
+  </div>
+
+  <div class="card">
+    <br>
+    <br>
+    <p>Confirm bookings</p>
+  </div>
+
+</div>
 
 
 
