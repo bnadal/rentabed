@@ -8,5 +8,16 @@
 <br>
 <h2>My bookings as a host</h2>
 <% @incoming_bookings.each do |booking| %>
-<p><%= booking.ad.title %> --- renter: <%= booking.user.email %> --- status: <%= booking.status %> --- <%= link_to "confirm my booking", booking_path(booking)%></p>
+<%= booking.ad.title %> --- renter:
+  <%= booking.user.email %>
+
+
+  <% if booking.status == "decline" %>
+ : <p style="color:red">This booking has been declined</p>
+  <% elsif booking.status == "pending" %>
+    status: --- <%= link_to "confirm my booking", booking_path(booking)%>
+  <% elsif booking.status == "confirmed" %>
+ : <p style= "color:green">This booking has already been confirmed </p>
+  <% end %>
+  <br>
 <% end %>

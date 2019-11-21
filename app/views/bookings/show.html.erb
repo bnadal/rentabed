@@ -3,8 +3,10 @@
 <h2>description: <%= @booking.ad.description %></h2>
   <p>renter: <%= @booking.user.email %></p>
   <p>status: <%= @booking.status %></p>
-  <p><%= link_to "confirm my booking", confirm_path(@booking)%></p>
-  <p><%= link_to "decline my booking", decline_path(@booking)%></p>
+  <p><%= link_to "confirm my booking", confirm_path(@booking) %></p>
+  <p><%= link_to "decline my booking", decline_path(@booking) %></p>
+  <br>
+  <p><%= link_to "Previous page", bookings_path(@booking) %></p>
 
 
 
