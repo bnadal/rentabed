@@ -15,7 +15,7 @@
   <% if booking.status == "decline" %>
  : <p style="color:red">This booking has been declined</p>
   <% elsif booking.status == "pending" %>
-    status: --- <%= link_to "confirm my booking", booking_path(booking)%>
+    status : pending --- <%= link_to "confirm my booking", booking_path(booking)%>
   <% elsif booking.status == "confirmed" %>
  : <p style= "color:green">This booking has already been confirmed </p>
   <% end %>

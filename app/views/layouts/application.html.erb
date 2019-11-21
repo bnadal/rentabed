@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,8 +36,18 @@
                     <%= link_to "View my bookings", bookings_path, class: "nav-link"%>
                   <% end %>
                 </li>
-                <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: "nav-link"   %></li>
-                <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"   %></li>
+
+                <li class="nav-item">
+<% if current_user == nil %>
+<%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+<% else %>
+<%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+<% end %>
+
+</li>
+
+
+
               </ul>
             </div>
         </div>
