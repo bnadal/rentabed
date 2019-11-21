@@ -22,8 +22,8 @@ class AdsController < ApplicationController
   def create # POST /ads
     @ad = Ad.new(ad_params)
     @ad.user = current_user
-    @ad.save!
-    redirect_to :new => 'root'
+    @ad.save
+    redirect_to root_path
   end
 
   def destroy
