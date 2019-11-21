@@ -9,38 +9,44 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="container" style="background-image: url(''); background-color: #e7eaea">
-      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <h1 style="color:blue; font-size:50px; font-family: sans-serif;">BedBnB</h1>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item"><%= link_to "HomePage", root_path, class: "nav-link"  %></li>
-              <li class="nav-item">
-                <% if current_user == nil %>
-                  <%= link_to "View my ads", new_user_session_path, class: "nav-link"  %>
-                <% else %>
-                  <%= link_to "View my ads", user_path(current_user), class: "nav-link"%>
-                <% end %>
-              </li>
-              <li class="nav-item">
-                <% if current_user == nil %>
-                  <%= link_to "View my bookings", new_user_session_path, class: "nav-link"  %>
-                <% else %>
-                  <%= link_to "View my bookings", bookings_path, class: "nav-link"%>
-                <% end %>
-              </li>
-              <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: "nav-link"   %></li>
-              <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"   %></li>
-            </ul>
-          </div>
-      </div>
+    <body>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="container" style="background-image: url(''); background-color: white">
 
-    <%= yield %>
-    </div>
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_pack_tag 'application' %>
-  </body>
-</html>
+        <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+
+          <h1 style="color:grey; font-size:50px; font-family: sans-serif;">BedBnB</h1>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><%= link_to "HomePage", root_path, class: "nav-link"  %></li>
+                <li class="nav-item">
+                  <% if current_user == nil %>
+                    <%= link_to "View my ads", new_user_session_path, class: "nav-link"  %>
+                  <% else %>
+                    <%= link_to "View my ads", user_path(current_user), class: "nav-link"%>
+                  <% end %>
+                </li>
+                <li class="nav-item">
+                  <% if current_user == nil %>
+                    <%= link_to "View my bookings", new_user_session_path, class: "nav-link"  %>
+                  <% else %>
+                    <%= link_to "View my bookings", bookings_path, class: "nav-link"%>
+                  <% end %>
+                </li>
+                <li class="nav-item"><%= link_to "Sign In", new_user_session_path, class: "nav-link"   %></li>
+                <li class="nav-item"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"   %></li>
+              </ul>
+            </div>
+        </div>
+
+
+
+
+      <%= yield %>
+      </div>
+      <%= javascript_include_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    </body>
+  </html>

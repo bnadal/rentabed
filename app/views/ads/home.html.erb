@@ -1,14 +1,15 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media-cdn.tripadvisor.com/media/photo-s/0c/59/67/d8/our-bed-as-a-request.jpg);">
   <div class="container">
     <h1>Find the perfect bed for a nap or for the night !</h1>
-    <a class="btn btn-flat" href="#"><p><%= link_to "Find a bed", ads_path%></p></a>
-
-    <a class="btn btn-flat" href="#">
-      <p>
+    <br>
+    <br>
+    <p><%= link_to "Find a bed", ads_path, class:"btn btn-flat"%></p>
+    <br>
+    <p>
         <% if current_user == nil %>
-          <%= link_to "put an ad", new_user_session_path%>
+          <%= link_to "put an ad", new_user_session_path, class:"btn btn-flat"%>
         <% else %>
-          <%= link_to "Put an ad", new_ad_path%>
+          <%= link_to "Put an ad", new_ad_path, class:"btn btn-flat"%>
           <% end %>
       </p>   
   </div>
