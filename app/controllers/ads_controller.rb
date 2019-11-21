@@ -12,7 +12,7 @@ class AdsController < ApplicationController
 
 
   def show
-     @ads = Ad.where(id: params[:id]) #display the ad once the user has clicked on the link 
+     @ads = Ad.where(id: params[:id]) #display the ad once the user has clicked on the link
   end
 
   def new  # GET /ads/new
