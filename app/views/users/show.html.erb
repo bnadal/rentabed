@@ -3,11 +3,11 @@
 <ul>
 <% @ads.each do |ad|%>
 <li>
-  <p><%= ad.description  %> ==> renter:
+  <p><%= link_to "#{ad.title}", ad_path(ad.id)  %> ==> renter:
   <%= if ad.bookings.last == nil
          "This bed is not rented"
       else  ad.bookings.last.user.email
-      end %> -- <%= link_to "See my ad", ad_path(ad.id)%>
+      end %>
     </p>
 <% end %>
 </li>

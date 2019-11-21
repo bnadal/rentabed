@@ -2,10 +2,11 @@
 
 
 <% @outgoing_bookings.each do |booking| %>
-<p><%= booking.ad.description %> --- host: <%= booking.ad.user.email %> --- <%= link_to "Cancel my booking", booking_path(booking), method: :delete%></p>
+<p><%= link_to "#{booking.ad.title}", ad_path(booking.ad) %> --- host: <%= booking.ad.user.email %> --- status: <%= booking.status %> --- <%= link_to "Cancel my booking", booking_path(booking), method: :delete%></p>
 <% end %>
+
 <br>
-<h2>My pending bookings as a host (to be confirmed)</h2>
+<h2>My bookings as a host</h2>
 <% @incoming_bookings.each do |booking| %>
-<p><%= booking.ad.description %> --- renter: <%= booking.user.email %> --- status: <%= booking.status %> --- <%= link_to "confirm my booking", booking_path(booking)%></p>
+<p><%= booking.ad.title %> --- renter: <%= booking.user.email %> --- status: <%= booking.status %> --- <%= link_to "confirm my booking", booking_path(booking)%></p>
 <% end %>
