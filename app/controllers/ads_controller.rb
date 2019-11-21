@@ -26,7 +26,10 @@ class AdsController < ApplicationController
     redirect_to root_path
   end
 
-  def delete
+  def destroy
+    @ad = Ad.find(params[:id])
+    @ad.destroy
+    redirect_to user_path(@ad.user)
   end
 
   private
