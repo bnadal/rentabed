@@ -1,8 +1,18 @@
 <h1>index</h1>
+
+
 <% @ads.each do |ad| %>
 <ul>
-  <li><%= link_to "#{ad.title}", ad_path(ad.id) %></li>
+  <li>
+
+    <% if ad.status == nil %>
+      <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
+    <% elsif ad.status == "" %>
+      <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
+    <% else %>
+      <%= ad.title %> --- status : Bed currently unavailable
+    <% end %>
+
+  </li>
 </ul>
 <% end %>
-
-
