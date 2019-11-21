@@ -3,17 +3,23 @@
 <p>Ad: <%= ad.title  %></p>
 <p>Description: <%= ad.description  %></p>
 <p>City: <%= ad.city  %></p>
-<p>Price per hour: <%= ad.price_per_hour  %></p>
-<p>Price per night<%= ad.price_per_night  %></p>
+<p>Price per hour (in CAD): <%= ad.price_per_hour  %></p>
+<p>Price per night (in CAD): <%= ad.price_per_night  %></p>
 <br>
 
   <% if ad.user ==  current_user %>
     <p><%=  "You are the owner of this bed! So you can not book it :)" %></p>
- 
-  <% else %>
-    <p><%= link_to "Book this bed", new_ad_booking_path(ad) %></p>
+
+  <% elsif current_user.present?%>
+
+    <% if ad.pending?(current_user, params[:id]) %>
+       <p><%= "It's pending, please wait for confirmation" %></p>
+
+    <% elsif ad.declined?(current_user, params[:id]) %>
+       <p><%= link_to "Your demand was decline. Try to book this bed again?", new_ad_booking_path(ad) %></p>
+    <% end %>
   <% end %>
 
 
-<%= link_to "Previous page", ads_path %></p>
+<%= link_to "Previous page", user_path(current_user) %></p>
 <% end %>
