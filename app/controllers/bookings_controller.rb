@@ -10,7 +10,6 @@ class BookingsController < ApplicationController
    def confirm
     @booking = Booking.find(params[:id])
      @booking.status = "confirmed"
-     @booking.ad.update(status: "unavailable")
      @booking.save
      redirect_to bookings_path
    end
@@ -19,7 +18,6 @@ class BookingsController < ApplicationController
    def decline
     @booking = Booking.find(params[:id])
      @booking.status = "decline"
-     @booking.ad.update(status: "available")
      @booking.save
      redirect_to bookings_path
    end
@@ -61,7 +59,6 @@ end
     # raise
     @booking.status = "pending"
     @booking.ad_id = params["ad_id"]
-    Ad.find(params["ad_id"]).update(status: "pending")
     @booking.user_id = current_user.id
     @booking.booking_start = params["booking"]["booking_start"]
     @booking.booking_end = params["booking"]["booking_end"]
