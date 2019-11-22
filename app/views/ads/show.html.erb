@@ -32,7 +32,12 @@
 
     <% elsif %>
        <p><%= link_to "Book this bed", new_ad_booking_path(ad), class:"btn-flat2" %></p>
-  <% end %>
+    <% end %>
+
+  <% elsif %>
+       <p><%= link_to "Book this bed", new_user_session_path, class:"btn-flat2" %></p>
+
+
 <% end %>
 <br>
 <%= link_to "Previous page", ads_path, class:"btn-flat3" %></p>
