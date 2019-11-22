@@ -11,10 +11,17 @@
   <p> renter:
      <%= if ad.bookings.last == nil
          "This bed is not rented"
-          else  ad.bookings.last.user.email
-          end %>  
+          else
+            ad.bookings.last.user.email
+          end %>
+
+<% if ad.bookings.last != nil %>
+
   <p>Booking starts: <%= ad.bookings.last.booking_start %></p>
-  <p>Booking ends: <%= ad.bookings.last.booking_end %></p>              
+  <p>Booking ends: <%= ad.bookings.last.booking_end %></p>
+
+<% end %>
+
   </p>
   <br>
       <p><%= link_to "Delete this ad", ad_path(ad), method: :delete, class:"btn-flat2" %></p>
