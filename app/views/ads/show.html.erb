@@ -25,10 +25,13 @@
   <% elsif current_user.present?%>
 
     <% if ad.pending?(current_user, params[:id]) %>
-       <p><%= "It's pending, please wait for confirmation" %></p>
+       <p><%= "Your booking is pending, please wait for confirmation" %></p>
 
     <% elsif ad.declined?(current_user, params[:id]) %>
        <p><%= link_to "Your demand was decline. Try to book this bed again?", new_ad_booking_path(ad) %></p>
+
+    <% elsif ad.status = "unavailable" %>
+    <p>Sorry this bed cannot be rented at the moment</p>
 
     <% elsif %>
        <p><%= link_to "Book this bed", new_ad_booking_path(ad), class:"btn-flat2" %></p>

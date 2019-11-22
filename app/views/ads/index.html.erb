@@ -12,12 +12,12 @@
      <% if ad.status == "unavailable" || ad.status == "pending" %>
 
       <%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %>
-      <p>Status: <%= ad.status %></p>
+      <p style="color:red">Status: Bed currently unavailable</p>
 
     <% else %>
 
       <%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %>
-      <p>Status: <%= ad.status %></p>
+      <p style="color:green">Status: Available</p>
 
     <% end %>
 
@@ -30,4 +30,3 @@
   </li>
 </ul>
 <% end %>
-
