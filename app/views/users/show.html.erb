@@ -12,7 +12,9 @@
      <%= if ad.bookings.last == nil
          "This bed is not rented"
           else  ad.bookings.last.user.email
-          end %>         
+          end %>  
+  
+  <p><%= ad.image %></p>               
   </p>
   <br>
       <p><%= link_to "Delete this ad", ad_path(ad), method: :delete, class:"btn-flat2" %></p>

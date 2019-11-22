@@ -8,6 +8,8 @@
       <div class="card-product-infos">
   <h5><%= link_to "#{booking.ad.title}", ad_path(booking.ad), class:"btn-flat4" %></h5>
   <p>host: <%= booking.ad.user.email %></p>
+  <p>Booking starts: <%= booking.booking_start %></p>
+  <p>Booking ends: <%= booking.booking_end %></p>
   <p>status: <%= booking.status %></p>
   <br>
   <p><%= link_to "Cancel my booking", booking_path(booking), method: :delete, class: "btn-flat2"%></p>
