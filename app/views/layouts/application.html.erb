@@ -16,11 +16,11 @@
 
         <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
 
-          <h1 style="color:grey; font-size:50px; font-family: sans-serif;">BedBnB</h1>
+          <h1 style="color:grey; font-size:50px; font-family: sans-serif;"><%= link_to "BedBnB", root_path, class: "nav-h1" %></h1>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><%= link_to "HomePage", root_path, class: "nav-link"  %></li>
+
                 <li class="nav-item">
                   <% if current_user == nil %>
                     <%= link_to "View my ads", new_user_session_path, class: "nav-link"  %>
