@@ -9,20 +9,19 @@
       <div class="card-product-infos">
 
 
-    <% if ad.status == nil %>
-      <h3><%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %></h3>
-      <p>status : Available</p>
-    <% elsif ad.status == "" %>
-      <p><%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %></p>
-      <p>status : Available</p>
-    <% else %> 
-       <h3><%= ad.title %></h3>
-       <p>status : Bed currently unavailable</p>
-    <% end %>
-    <p><%= ad.description %></p>
-    <p>Price per hour: <%= ad.price_per_hour %></p>
-    <p>Price per night: <%= ad.price_per_night %></p>
+     <% if ad.status == "unavailable" || ad.status == "pending" %>
 
+      <%= ad.title %> --- status : Bed currently unavailable
+
+    <% else %>
+
+      <%= ad.title %> --- <%= link_to "You can book it !", ad_path(ad.id) %>
+
+    <% end %>
+
+      <p><%= ad.description %></p>
+      <p>Price per hour: <%= ad.price_per_hour %></p>
+        <p>Price per night: <%= ad.price_per_night %></p>
     </div>
   </div>
 
