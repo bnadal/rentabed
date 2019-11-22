@@ -1,0 +1,54 @@
+.btn-flat2 {
+  color: white;
+  font-weight: bold;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #1BCB7F;
+  transition: background 0.3s ease;
+}
+
+.btn-flat2:hover {
+  background: #66ff66;
+  color: white;
+}
+
+.btn-flat2:link 
+{ 
+text-decoration:none; 
+}
+
+
+.btn-flat3 {
+  color: white;
+  font-weight: bold;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: grey;
+  transition: background 0.3s ease;
+}
+
+.btn-flat3:hover {
+  background: #a6a6a6;
+  color: white;
+}
+
+.btn-flat3:link 
+{ 
+text-decoration:none; 
+}
+
+
+.btn-flat4 {
+  color: #003366;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.btn-flat4:hover {
+  color: #3399ff;
+}
+
+.btn-flat4:link 
+{ 
+text-decoration:none; 
+}

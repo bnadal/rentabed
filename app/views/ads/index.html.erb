@@ -1,6 +1,4 @@
-
-<h1>Beds available</h1>
-
+<h3>Beds</h3>
 
 <% @ads.each do |ad| %>
 <ul>
@@ -10,10 +8,10 @@
       <div class="card-product-infos">
 
     <% if ad.status == nil %>
-      <h3><%= link_to "#{ad.title}", ad_path(ad.id) %></h3>
+      <h3><%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %></h3>
       <p>status : Available</p>
     <% elsif ad.status == "" %>
-      <h3><%= link_to "#{ad.title}", ad_path(ad.id) %></h3>
+      <p><%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %></p>
       <p>status : Available</p>
     <% else %> 
        <h3><%= ad.title %></h3>
