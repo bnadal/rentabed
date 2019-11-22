@@ -13,8 +13,8 @@
          "This bed is not rented"
           else  ad.bookings.last.user.email
           end %>  
-  
-  <p><%= ad.image %></p>               
+  <p>Booking starts: <%= ad.bookings.last.booking_start %></p>
+  <p>Booking ends: <%= ad.bookings.last.booking_end %></p>              
   </p>
   <br>
       <p><%= link_to "Delete this ad", ad_path(ad), method: :delete, class:"btn-flat2" %></p>
