@@ -1,12 +1,11 @@
 <h3>Beds</h3>
 
-<%= form_tag ads_path, method: :get do %>
+<%= form_tag ads_path, method: :get, class: 'navbar-search' do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
-    placeholder: "Find your bed of your dream"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+    placeholder: "Find the bed of your dream" %>
+  <%= submit_tag "Search", class: "btn-flat6" %>
 <% end %>
 
 <% @ads.each do |ad| %>
