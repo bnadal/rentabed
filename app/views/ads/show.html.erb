@@ -1,11 +1,23 @@
-<h1>Detail of the ad</h1>
 <% @ads.each do |ad|%>
-  <p>Ad: <%= ad.title  %></p>
-  <p>Description: <%= ad.description  %></p>
-  <p>City: <%= ad.city  %></p>
-  <p>Price per hour (in CAD): <%= ad.price_per_hour  %></p>
-  <p>Price per night (in CAD): <%= ad.price_per_night  %></p>
-  <br>
+<p><span class="bold_main_title"><%= ad.title  %></span></p>
+
+
+<div class="card-trip">
+  <img src= "<%= ad.image  %>"/>
+  <div class="card-trip-infos">
+    <div>
+      <p><span class="bold_title">Description: </span><%=ad.description%></p>
+      <br>
+      <p><span class="bold_title">City: </span><%=ad.city%></p>
+      <br>
+      <p><span class="bold_title">Price per hour: </span><%= ad.price_per_hour  %></p>
+      <br>
+      <p><span class="bold_title">Price per night: </span><%= ad.price_per_night  %></p>
+    </div>
+  </div>
+</div>
+
+<br>
 
   <% if ad.user ==  current_user %>
     <p><%=  "You are the owner of this bed! So you can not book it :)" %></p>
@@ -19,11 +31,9 @@
        <p><%= link_to "Your demand was decline. Try to book this bed again?", new_ad_booking_path(ad) %></p>
 
     <% elsif %>
-       <p><%= link_to "Book this bed", new_ad_booking_path(ad) %></p>
+       <p><%= link_to "Book this bed", new_ad_booking_path(ad), class:"btn-flat2" %></p>
   <% end %>
 <% end %>
-
-
-
-<%= link_to "Previous page", ads_path %></p>
+<br>
+<%= link_to "Previous page", ads_path, class:"btn-flat3" %></p>
 <% end %>
