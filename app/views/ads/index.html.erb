@@ -1,11 +1,13 @@
 <h3>Beds</h3>
 
+
 <% @ads.each do |ad| %>
 <ul>
   <li>
     <div class="card-product">
        <img src=<%= ad.image %>>
       <div class="card-product-infos">
+
 
     <% if ad.status == nil %>
       <h3><%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4" %></h3>
@@ -20,6 +22,7 @@
     <p><%= ad.description %></p>
     <p>Price per hour: <%= ad.price_per_hour %></p>
     <p>Price per night: <%= ad.price_per_night %></p>
+
     </div>
   </div>
 
