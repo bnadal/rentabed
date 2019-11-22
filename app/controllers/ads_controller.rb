@@ -38,7 +38,7 @@ class AdsController < ApplicationController
   private
 
   def ad_params
-    params.require(:ad).permit(:title, :description, :location, :city, :price_per_hour, :price_per_night, :user_id)
+    params.require(:ad).permit(:title, :description, :location, :city, :price_per_hour, :price_per_night, :user_id, :image)
   end
 
 end

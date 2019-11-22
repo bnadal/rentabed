@@ -1,4 +1,4 @@
-<h2>My bookings as a renter</h2>
+<h2 class="myads">My bookings as a renter</h2>
 
 <% @outgoing_bookings.each do |booking| %>
 <ul>
@@ -18,9 +18,9 @@
 </ul>
 <% end %>
 
-
 <br>
-<h2>My bookings as a host</h2>
+<br>
+<h2 class="myads">My bookings as a host</h2>
 <% @incoming_bookings.each do |booking| %>
 <ul>
   <li>
@@ -37,7 +37,7 @@
   <p><% elsif booking.status == "pending" %></p>
     <p>status : pending</p>
     <br>
-      <p><%= link_to "confirm my booking", booking_path(booking), class: "btn-flat2"%></p>
+      <p><%= link_to "Approve the booking", booking_path(booking), class: "btn-flat2"%></p>
     <% elsif booking.status == "confirmed" %>
 : <p style= "color:green">This booking has already been confirmed </p>
 <% end %>

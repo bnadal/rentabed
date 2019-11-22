@@ -19,13 +19,17 @@ font-weight: bold;
 .nav-h1 {
 color: grey;
 font-size:50px;
- font-family: sans-serif;
+font-family: sans-serif;
 }
 
 .nav-h1:hover {
 color: black;
 font-size:49px;
 font-family: sans-serif;
+}
+
+.nav-h1:link {
+ text-decoration:none; 
 }
 
 
