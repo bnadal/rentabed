@@ -1,13 +1,22 @@
 <h1>show booking</h1>
-
-<h2>description: <%= @booking.ad.description %></h2>
+<ul>
+  <li>
+    <div class="card-product">
+       <img src=<%= @booking.ad.image %>>
+      <div class="card-product-infos">
+<h2><%= @booking.ad.description %></h2>
   <p>renter: <%= @booking.user.email %></p>
   <p>status: <%= @booking.status %></p>
-  <p><%= link_to "confirm my booking", confirm_path(@booking) %></p>
-  <p><%= link_to "decline my booking", decline_path(@booking) %></p>
   <br>
-  <p><%= link_to "Previous page", bookings_path(@booking) %></p>
+  <p><%= link_to "confirm my booking", confirm_path(@booking), class:"btn-flat2" %></p>
+  <br>
+  <p><%= link_to "decline my booking", decline_path(@booking), class:"btn-flat5" %></p>
+  <br>
+  <p><%= link_to "Previous page", bookings_path(@booking), class:"btn-flat3" %></p>
 
-
-
+ 
+  <li>
+    <ul>
+    </div>
+   </div>
 
