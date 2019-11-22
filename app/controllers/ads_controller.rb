@@ -5,8 +5,11 @@ class AdsController < ApplicationController
   end
 
   def index
-       # GET /ads/:id
-       @ads = Ad.all
+    if params[:query].present?
+      @ads = Ad.search_by_title(params[:query])
+    else
+      @ads = Ad.all
+    end
   end
 
 
