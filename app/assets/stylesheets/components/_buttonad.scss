@@ -37,7 +37,6 @@ text-decoration:none;
 text-decoration:none; 
 }
 
-
 .btn-flat4 {
   color: #003366;
   font-weight: bold;
@@ -52,3 +51,24 @@ text-decoration:none;
 { 
 text-decoration:none; 
 }
+
+.btn-flat5 {
+  color: white;
+  font-weight: bold;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: red;
+}
+
+.btn-flat5:hover {
+  background: #ff8095;
+  color: white;
+}
+
+.btn-flat5:link 
+{ 
+text-decoration:none; 
+}
+
+
+
