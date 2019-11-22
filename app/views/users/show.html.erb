@@ -7,16 +7,15 @@
   <div class="card-product">
      <img src=<%= ad.image %>>
      <div class="card-product-infos">
-  <h3<%= link_to "#{ad.title}", ad_path(ad.id)  %></h3>
+  <h5><%= link_to "#{ad.title}", ad_path(ad.id), class:"btn-flat4"%></h5>
   <p> renter:
      <%= if ad.bookings.last == nil
          "This bed is not rented"
           else  ad.bookings.last.user.email
-          end %>
-            
+          end %>         
   </p>
-      <p><%= link_to "Delete this ad", ad_path(ad), method: :delete%></p>
+  <br>
+      <p><%= link_to "Delete this ad", ad_path(ad), method: :delete, class:"btn-flat2" %></p>
 </li>
 </ul>
 <% end %>
-

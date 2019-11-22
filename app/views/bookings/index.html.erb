@@ -1,13 +1,17 @@
 <h2>My bookings as a renter</h2>
 
-
 <% @outgoing_bookings.each do |booking| %>
 <ul>
   <li>
     <div class="card-product">
        <img src=<%= booking.ad.image %>>
       <div class="card-product-infos">
-<p><%= link_to "#{booking.ad.title}", ad_path(booking.ad) %> --- host: <%= booking.ad.user.email %> --- status: <%= booking.status %> --- <%= link_to "Cancel my booking", booking_path(booking), method: :delete%></p>
+  <h5><%= link_to "#{booking.ad.title}", ad_path(booking.ad), class:"btn-flat4" %></h5>
+  <p>host: <%= booking.ad.user.email %></p>
+  <p>status: <%= booking.status %></p>
+  <br>
+  <p><%= link_to "Cancel my booking", booking_path(booking), method: :delete, class: "btn-flat2"%></p>
+  
   </li>
 </ul>
 <% end %>
@@ -20,17 +24,17 @@
   <li>
     <div class="card-product">
        <img src=<%= booking.ad.image %>>
-      <div class="card-product-infos"
+      <div class="card-product-infos">
+   <h5><%= link_to "#{booking.ad.title}", ad_path(booking.ad), class:"btn-flat4" %></h5>
+   <p>renter:<%= booking.user.email %></p>
 
-
-<%= link_to "#{booking.ad.title}", ad_path(booking.ad) %> --- renter:
-  <%= booking.user.email %>
-
-<% if booking.status == "decline" %>
+ <p><% if booking.status == "decline" %>
   : <p style="color:red">This booking has been declined</p>
-<% elsif booking.status == "pending" %>
-    status : pending --- <%= link_to "confirm my booking", booking_path(booking)%>
-<% elsif booking.status == "confirmed" %>
+  <p><% elsif booking.status == "pending" %></p>
+    <p>status : pending</p>
+    <br>
+      <p><%= link_to "confirm my booking", booking_path(booking), class: "btn-flat2"%></p>
+    <% elsif booking.status == "confirmed" %>
 : <p style= "color:green">This booking has already been confirmed </p>
 <% end %>
   <br>
