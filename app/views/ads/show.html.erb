@@ -30,7 +30,7 @@
     <% elsif ad.declined?(current_user, params[:id]) %>
        <p><%= link_to "Your demand was decline. Try to book this bed again?", new_ad_booking_path(ad) %></p>
 
-    <% elsif ad.status = "unavailable" %>
+    <% elsif ad.status == "unavailable" %>
     <p>Sorry this bed cannot be rented at the moment</p>
 
     <% elsif %>
