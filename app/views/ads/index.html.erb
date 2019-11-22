@@ -1,4 +1,3 @@
-
 <h1>Beds available</h1>
 
 
@@ -9,16 +8,20 @@
        <img src="https://media-cdn.tripadvisor.com/media/photo-s/06/75/dd/9d/romantic-bed.jpg">
       <div class="card-product-infos">
 
-    <% if ad.status == nil %>
-      <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
-    <% elsif ad.status == "" %>
-      <%= link_to "#{ad.title}", ad_path(ad.id) %> --- status : Available
+    <% if ad.status == "available" %>
+
+      <%= ad.title %> --- <%= link_to "You can book it !", ad_path(ad.id) %>
+
     <% else %>
+
       <%= ad.title %> --- status : Bed currently unavailable
+
     <% end %>
+
       <p><%= ad.description %></p>
       <p>Price per hour: <%= ad.price_per_hour %></p>
-        <p>Price per night: <%= ad.price_per_night %></p>
+      <p>Price per night: <%= ad.price_per_night %></p>
+
     </div>
   </div>
 
