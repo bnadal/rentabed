@@ -29,6 +29,8 @@
       <div class="card-product-infos">
    <h5><%= link_to "#{booking.ad.title}", ad_path(booking.ad), class:"btn-flat4" %></h5>
    <p>renter:<%= booking.user.email %></p>
+   <p>Booking starts: <%= booking.booking_start %></p>
+   <p>Booking ends: <%= booking.booking_end %></p
 
  <p><% if booking.status == "decline" %>
   : <p style="color:red">This booking has been declined</p>
